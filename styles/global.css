@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.tab-content {
+    max-height: 0;
+    -webkit-transition: max-height .35s;
+    -o-transition: max-height .35s;
+    transition: max-height .35s;
+}
+    /* :checked - resize to full height */
+.tab input:checked ~ .tab-content {
+    max-height: 100vh;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+ }
+    /* Label formatting when open */
+.tab input:checked + label{
+    padding: 1.25rem; /*.p-5*/
+    background-color: #0080ca;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    
+    
+}
+
+.tab input:checked + label>div>svg {
+    transform: rotate(180deg);
+}
+@media (max-width: 767px) {
+    .lineheightfixed {
+        line-height: 25px !important;   
+        margin-top: -5px;
+        margin-bottom: 10px;
+    }
+}
+
+:focus {
+    outline-style: none;
+    box-shadow: none;
+    border-color: transparent;
+}
